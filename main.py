@@ -57,6 +57,6 @@ async def main():
         print(list(chunk))
         tasks = [asyncio.create_task(send_to_contacts(contact)) for contact in chunk]
         results = await asyncio.gather(*tasks)
-
+    cur.close()
 
 asyncio.run(main())
